@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name_Ingre: MyText
+  Type_Ingre: MyText
+  Description: MyText
+
+two:
+  Name_Ingre: MyText
+  Type_Ingre: MyText
+  Description: MyText

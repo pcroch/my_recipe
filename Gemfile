@@ -52,3 +52,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gemfile
 gem 'devise'
+
+#pru in rails console
+gem 'pry-rails', :group => :development
