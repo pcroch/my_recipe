@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #creation of users
-user = User.create(email: "b@b.b", password: "123123")
-user1 = User.create(email: "a@a.a", password: "123123")
+User.create(email: "b@b.b", password: "123123")
+User.create(email: "a@a.a", password: "123123")
 
 
+Recipe.create(name: "French fries", user_id: 1)
+Recipe.create(name: "Burger", user_id: 2)
