@@ -13,3 +13,20 @@ User.create(email: "a@a.a", password: "123123")
 
 Recipe.create(name: "French fries", user_id: 1)
 Recipe.create(name: "Burger", user_id: 2)
+
+Ingredient.create(Name_Ingre: "potatoes", Type_Ingre: "Vegi")
+Ingredient.create(Name_Ingre: "salt", Type_Ingre: "condiment")
+Ingredient.create(Name_Ingre: "beef", Type_Ingre: "meat")
+Ingredient.create(Name_Ingre: "cheddar", Type_Ingre: "cheese")
+Ingredient.create(Name_Ingre: "oignons", Type_Ingre: "Vegi")
+
+# quantity for the fries
+IngredientQuantity.create(ingredient_id: 1, recipe_id: 1, quantity: 2) # potatoes
+IngredientQuantity.create(ingredient_id: 2, recipe_id: 1, quantity: 1) # salt
+
+
+# quantity for the burger
+IngredientQuantity.create(ingredient_id: 2, recipe_id: 2, quantity: 1) # salt
+IngredientQuantity.create(ingredient_id: 3, recipe_id: 2, quantity: 5) # beef
+IngredientQuantity.create(ingredient_id: 4, recipe_id: 2, quantity: 3) # cheddar
+IngredientQuantity.create(ingredient_id: 5, recipe_id: 2, quantity: 2) # oignons

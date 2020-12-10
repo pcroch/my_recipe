@@ -1,0 +1,27 @@
+show.html.erb
+<h1>Display a specific recipe</h1>
+
+<h1><%= @recipe.name %></h1>
+
+<%= @recipe.duration %>
+<%= @recipe.difficulty %>
+<%= @recipe.price %>
+<%= @recipe.cuisine %>
+<%= @recipe.steps %>
+
+<h2>List of the ingredients</h2>
+
+<% @recipe.ingredients.each do |ingredient| %>
+<ul>
+<li>Name: <%= ingredient.Name_Ingre%> | Type: <%= ingredient.Type_Ingre%> | Quantity: <%= ingredient.ingredient_quantities[0].quantity%></li>
+</ul>
+
+
+<%end  %>
+
+
+
+
+
+
+
