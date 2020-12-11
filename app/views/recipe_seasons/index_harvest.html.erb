@@ -1,5 +1,6 @@
-<!-- app/views/pages/about.html.erb -->
-<h1>Our contact 🚀</h1>
+<h2>List of all recipes per season</h2>
+
+
 
 
 <ul id="results"></ul>
@@ -17,6 +18,7 @@ fetch("https://apiseason.herokuapp.com/api/v1/products")
       const movie = `<li>
         <p>${result.name}</p>
         <p>${result.kind}</p>
+        <p>${result.months_available}</p>
       </li>`;
       results.insertAdjacentHTML("beforeend", movie);
     });
@@ -25,3 +27,6 @@ fetch("https://apiseason.herokuapp.com/api/v1/products")
 
 
 </script>
+
+
+sort by months or by season
