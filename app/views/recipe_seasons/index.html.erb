@@ -1,0 +1,96 @@
+
+
+<!-- <button id="show_season">Show per season</button> upcoming -->
+
+<!-- <ul id="results"></ul> -->
+<!-- <label for="months_input">Name (4 to 8 characters):</label> -->
+<!-- <input type="text" id="months_input" name="months_input" required
+       minlength="1" maxlength="15" size="15">
+<button id="show_months">Filter by months</button> -->
+<header>
+To be done
+</header>
+
+<body class="layout">
+
+  <section>
+    <h2>Calendar of the fruits and vegetables in Belgium</h2>
+    <div class="share-widget size-1">
+      <div class="share-item">Whatsapp</div>
+      <div class="share-item">Lkin</div>
+      <div class="share-item">Fb</div>
+    </div>
+  </section>
+
+  <nav class="month-nav">
+      <a href="#fevrier" itemprop="url" class=""><span>Januari</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>Februari</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>March</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>April</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>May</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>June</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>July</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>August</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>September</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>October</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>November</span></a>
+      <a href="#fevrier" itemprop="url" class=""><span>December</span></a>
+  </nav>
+  <main class="calendar">
+    <ul class="calendar-month">
+
+
+
+
+    </ul>
+  </main>
+
+
+</body>
+
+
+
+
+
+
+
+
+<script>
+
+ // feching the data
+const results = document.querySelector("#results");
+
+fetch("https://apiseason.herokuapp.com/api/v1/products")
+.then(response => response.json())
+  .then((data) => {
+    data.products.forEach((result) => {
+      const movie = `<li class="${result.months_available}">
+        <p>${result.name}</p>
+        <p>${result.kind}</p>
+        <p>${result.months_available}</p>
+      </li>`;
+
+      results.insertAdjacentHTML("beforeend", movie);
+
+    });
+  });
+
+// sorting per months
+const myevent = document.getElementById("show_months").addEventListener("click", function() {
+  let chosen_month = document.getElementById("months_input").value
+  const myarray = document.getElementsByClassName(chosen_month)
+  // console.log("myarray");
+    let i = 0;
+    while (i < myarray.length) {i++;
+      // myarray[i].style.display = 'none';
+      myarray[i].add("really_hidden")
+    }
+});
+
+
+</script>
+
+
+
+<!-- https://www.farm.coop/calendrier-fruits-legumes-belges/ -->
+<!-- https://www.greenpeace.fr/guetteur/calendrier/ -->

@@ -1,7 +1,7 @@
 class RecipeSeasonsController < ApplicationController
 end
 class RecipeSeasonsController < ApplicationController
-  def index_harvest
+  def index
 
   end
 
