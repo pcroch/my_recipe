@@ -48,7 +48,7 @@ body {
     line-height: 1.2;
     color: #212529;
     text-align: left;
-        background-color: #f1f1f1;
+    background-color: #f1f1f1;
 
 
 }
@@ -91,7 +91,7 @@ body {
 
 
     //  add CSS for the a in the section month
-         a{
+         button {
       width: calc(100% / 3 - 1rem);
       background: silver;
       padding: 0.5rem;
@@ -99,22 +99,38 @@ body {
       color: #ff683a;
       text-decoration: none;
       background-color: transparent;
+      border: none;
     }
 }
+
 
 // .layout .month-nav {
 
 //     background-color: #f1f1f1;
 
 // }
-a:-webkit-any-link {
+// a:-webkit-any-link {
+//     // color: -webkit-link;
+//     cursor: pointer;
+//     // text-decoration: underline;
+// }
+
+button:-webkit-any-link {
     // color: -webkit-link;
     cursor: pointer;
     // text-decoration: underline;
 }
 
 
-.month-nav a {
+// .month-nav a {
+//     width: 33.33%;
+//     padding: 0;
+//     display: flex;
+//     justify-content: stretch;
+//     align-content: stretch;
+// }
+
+.month-nav button {
     width: 33.33%;
     padding: 0;
     display: flex;
@@ -123,7 +139,18 @@ a:-webkit-any-link {
 }
 
 
-.month-nav a span {
+// .month-nav a span {
+//     border-radius: 5px;
+//     background-color: #fff;
+//     color: #ff683a;
+//     margin: 3px;
+//     border: 1px solid #ccc;
+//     width: 100%;
+//     text-align: center;
+//     padding: 6px 3px;
+// }
+
+.month-nav button span {
     border-radius: 5px;
     background-color: #fff;
     color: #ff683a;
@@ -134,17 +161,25 @@ a:-webkit-any-link {
     padding: 6px 3px;
 }
 
-.month-nav a:hover {
+// .month-nav a:hover {
+//     text-decoration: none;
+// }
+
+.month-nav button:hover {
     text-decoration: none;
 }
 
-a:hover {
+// a:hover {
+//     color: #ed3700;
+//     text-decoration: underline;
+//         background-color: transparent;
+// }
+
+button:hover {
     color: #ed3700;
     text-decoration: underline;
         background-color: transparent;
 }
-
-
 // ### main calendar
 
 
@@ -235,7 +270,12 @@ header {
 
 // }
 
+.btn-all  {
+    color: #212529;
+    background-color: #ff683a;
+    border-color: #ff683a;
 
+}
 
 .list-items li{
     padding: 0 0 .7rem 1.6rem;
@@ -283,7 +323,17 @@ header {
 }
 
 
+#vegetables_title {
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    position: relative;
 
+
+}
 
 
 // ### Display follwing the size of the user screen

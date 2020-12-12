@@ -23,29 +23,30 @@
 
   </section>
 
-  <nav class="month-nav">
-      <a href="#Januari" itemprop="url" class=""><span>Januari</span></a>
-      <a href="#Februari" itemprop="url" class=""><span>Februari</span></a>
-      <a href="#" itemprop="url" class=""><span>March</span></a>
-      <a href="#" itemprop="url" class=""><span>April</span></a>
-      <a href="#" itemprop="url" class=""><span>May</span></a>
-      <a href="#" itemprop="url" class=""><span>June</span></a>
-      <a href="#" itemprop="url" class=""><span>July</span></a>
-      <a href="#" itemprop="url" class=""><span>August</span></a>
-      <a href="#" itemprop="url" class=""><span>September</span></a>
-      <a href="#" itemprop="url" class=""><span>October</span></a>
-      <a href="#" itemprop="url" class=""><span>November</span></a>
-      <a href="#" itemprop="url" class=""><span>December</span></a>
+  <nav class="month-nav" id="test">
+    <button class="month" value="Januari" type="submit"><span>Januari</span></button>
+    <button class="month" value="Februari"type="submit" ><span>Februari</span></button>
+    <button class="month" value="March"><span>March</span></button>
+    <button class="month" value="April"><span>April</span></button>
+    <button class="month" value="May"><span>May</span></button>
+    <button class="month" value="June"><span>June</span></button>
+    <button class="month" value="July"><span>July</span></button>
+    <button class="month" value="August"><span>August</span></button>
+    <button class="month" value="August"><span>September</span></button>
+    <button class="month" value="October" ><span>October</span></button>
+    <button class="month" value="November"><span>November</span></button>
+    <button class="month" value="December"><span>December</span></button>
   </nav>
   <main class="calendar">
-    <header> <h2 id="main_month_title">Januari==> drop down</h2></header>
+    <header> <h2 id="main_month_title">Januari== drop down</h2></header>
     <div class="nav">
-        <button class=" btn btn-vegetables">Vegetables</button>  <button class="  btn btn-fruits">Fruits</button>
+        <button class=" btn btn-vegetables">Vegetables</button>  <button class=" btn btn-all">All </button> <button class="  btn btn-fruits">Fruits</button>
     </div>
     <article class="list-items list-legumes">
-      <h3 class="nav">Vegetables</h3>
+      <h3 class="nav" id="vegetables_title">Vegetables</h3>
       <ul class="calendar-month">
-        <li title="Ail" >
+        <p id="results"></p>
+        <!-- <li title="Ail" >
                 Ail
             </li>
         <li title="Betterave">
@@ -56,7 +57,7 @@
         </li>
         <li title="Betterave">
              Betterave
-        </li>
+        </li> -->
       </ul>
     </article>
   </main>
@@ -78,28 +79,27 @@ fetch("https://apiseason.herokuapp.com/api/v1/products")
 .then(response => response.json())
   .then((data) => {
     data.products.forEach((result) => {
-      const movie = `<li class="${result.months_available}">
-        <p>${result.name}</p>
-        <p>${result.kind}</p>
-        <p>${result.months_available}</p>
-      </li>`;
+      const haverst = `
+          <li class="${result.months_available} ${result.kind}" title="${result.name}">
+             <p>${result.name} | ${result.kind} | ${result.months_available} </p>
+          </li>`;
 
-      results.insertAdjacentHTML("beforeend", movie);
+      results.insertAdjacentHTML("beforeend", haverst);
 
     });
   });
 
-// sorting per months
-const myevent = document.getElementById("show_months").addEventListener("click", function() {
-  let chosen_month = document.getElementById("months_input").value
-  const myarray = document.getElementsByClassName(chosen_month)
-  // console.log("myarray");
-    let i = 0;
-    while (i < myarray.length) {i++;
-      // myarray[i].style.display = 'none';
-      myarray[i].add("really_hidden")
-    }
-});
+
+
+let buttons = document.querySelectorAll('.month');
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].onclick = function(event) {
+    // console.log(event.target.value)
+    let a = event.target.value
+alert(a)
+  }
+}
 
 
 </script>
