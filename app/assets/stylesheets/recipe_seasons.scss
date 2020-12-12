@@ -2,18 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
+// https://www.greenpeace.fr/guetteur/calendrier/
 // add a class show for homepage
 .really_hidden {
   display: none;
 }
 
 
+// ### Header
+
+#header_title {
+ // font-size: 3em;
+ font-size: xx-large;
+ font-weight: bolder;
+
+}
+
+.share-widget {
+  min-width: 696px;
+  // list-style: none;
+  padding-top: 20px;
+  text-align:left;
+
+
+
+}
+
+
+.share-item {
+  display:inline-block;
+    float: none
+
+
+}
 
 
 //  ### Body css
 
 body {
+
     margin: 0;
     font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
     font-size: 1rem;
@@ -21,6 +48,8 @@ body {
     line-height: 1.2;
     color: #212529;
     text-align: left;
+        background-color: #f1f1f1;
+
 
 }
 
@@ -52,20 +81,17 @@ body {
 // set the correct layout for the a in the ection moths
 .month-nav {
 
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
     padding: 1.6rem 1rem .7rem;
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    // background: grey;
     padding: 1rem;
 
 
     //  add CSS for the a in the section month
          a{
-
-
       width: calc(100% / 3 - 1rem);
       background: silver;
       padding: 0.5rem;
@@ -76,6 +102,11 @@ body {
     }
 }
 
+// .layout .month-nav {
+
+//     background-color: #f1f1f1;
+
+// }
 a:-webkit-any-link {
     // color: -webkit-link;
     cursor: pointer;
@@ -118,15 +149,125 @@ a:hover {
 
 
 
+// .month {
+//     padding: .5rem .5rem 0;
+//     background-color: #fff;
+//     border: 1px solid #ccc;
+//     border-radius: 6px;
+//     margin: 0 0 .5rem;
+// }
+
+#main_month_title {
+    margin: 0;
+    color: #ff683a;
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    position: relative;
+
+}
+
+header {
+    text-align: center;
+    padding-bottom: 0;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
+}
+.calendar {
+    max-width: 100%;
+    margin: 0;
+    // background-color: #f1f1f1;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+
+// .nav-justified .nav-item, .nav-justified>.nav-link {
+//     flex-basis: 0;
+//     flex-grow: 1;
+//     text-align: center;
+// }
+
+
+.btn {
+
+    // display: inline-block;
+    // font-weight: 400;
+    // color: #212529;
+    // text-align: center;
+    // vertical-align: middle;
+    // // -webkit-user-select: none;
+    // // -moz-user-select: none;
+    // // -ms-user-select: none;
+    // user-select: none;
+    // background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    border-radius: .25rem;
+    flex-grow: 1;
+    margin: 1rem;
+    // transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-vegetables {
+    color: #fff;
+    background-color: #00b94f;
+    border-color: #00b94f;
+}
+
+.btn-fruits {
+    background-color: #00bec3;
+}
+
+// li {
+//     display: list-item;
+//     text-align: -webkit-match-parent;
+
+// }
 
 
 
+.list-items li{
+    padding: 0 0 .7rem 1.6rem;
+    margin: 0 0 .6rem;
+    line-height: 1.2;
+    border-bottom: 1px solid hsla(0,0%,100%,.7);
+    font-weight: 500;
+    width: 100%;
+
+}
 
 
+.list-legumes {
+    background-color: #00b94f;
+}
+
+.list-items {
+    border-radius: 6px;
+    padding: 1rem;
+    color: #fff;
+    margin-bottom: .5rem;
+}
 
 
-
-
+// li::marker {
+//     unicode-bidi: isolate;
+//     font-variant-numeric: tabular-nums;
+//     text-transform: none;
+//     text-indent: 0px !important;
+//     text-align: start !important;
+//     text-align-last: start !important;
+// }
 
 
 
