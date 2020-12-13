@@ -38,7 +38,7 @@
     <button class="month" value="December"><span>December</span></button>
   </nav>
   <main class="calendar">
-    <header> <h2 id="main_month_title">Januari== drop down</h2></header>
+    <header> <h2 id="main_month_title"></h2></header>
     <div class="nav">
         <button class=" btn btn-vegetables">Vegetables</button>  <button class=" btn btn-all" id="all">All </button> <button class="  btn btn-fruits">Fruits</button>
     </div>
@@ -89,6 +89,7 @@ fetch("https://apiseason.herokuapp.com/api/v1/products")
     });
   });
 
+
 // it will hid the none selected line => month not choose in the months calendar
 const buttons = document.querySelectorAll('.month');
 
@@ -97,10 +98,15 @@ for (let i = 0; i < buttons.length; i++) {
       let tmp = event.target.innerHTML
         const array_month = document.getElementsByClassName('month-api')
         for (let j=0; j < array_month.length; j++) {
-          if (array_month[j].classList[1] != tmp){array_month[j].classList.add("really_hidden")}
+          if (array_month[j].classList[1] != tmp){
+              array_month[j].classList.add("really_hidden")
+          }
+
           }
       // for debuggin only
       // alert(tmp);
+      main_month_title.innerHTML=""
+      main_month_title.textContent = tmp;
   }}
 
 
@@ -110,7 +116,12 @@ const myevent = document.getElementById("all").addEventListener("click", functio
         for (let j=0; j < array_month.length; j++) {
           array_month[j].classList.remove("really_hidden")
           }
+      main_month_title.innerHTML= ""
+      main_month_title.textContent = "All the months";
 })
+
+//
+
 
 </script>
 
