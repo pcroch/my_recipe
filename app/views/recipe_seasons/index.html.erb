@@ -40,7 +40,7 @@
   <main class="calendar">
     <header> <h2 id="main_month_title">Januari== drop down</h2></header>
     <div class="nav">
-        <button class=" btn btn-vegetables">Vegetables</button>  <button class=" btn btn-all">All </button> <button class="  btn btn-fruits">Fruits</button>
+        <button class=" btn btn-vegetables">Vegetables</button>  <button class=" btn btn-all" id="all">All </button> <button class="  btn btn-fruits">Fruits</button>
     </div>
     <article class="list-items list-legumes">
       <h3 class="nav" id="vegetables_title">Vegetables</h3>
@@ -90,7 +90,7 @@ fetch("https://apiseason.herokuapp.com/api/v1/products")
   });
 
 // it will hid the none selected line => month not choose in the months calendar
-let buttons = document.querySelectorAll('.month');
+const buttons = document.querySelectorAll('.month');
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].onclick = function(event) {
@@ -99,12 +99,18 @@ for (let i = 0; i < buttons.length; i++) {
         for (let j=0; j < array_month.length; j++) {
           if (array_month[j].classList[1] != tmp){array_month[j].classList.add("really_hidden")}
           }
-      alert(tmp);
+      // for debuggin only
+      // alert(tmp);
   }}
 
 
-
-
+// clear the months selected
+const myevent = document.getElementById("all").addEventListener("click", function() {
+        const array_month = document.getElementsByClassName('month-api')
+        for (let j=0; j < array_month.length; j++) {
+          array_month[j].classList.remove("really_hidden")
+          }
+})
 
 </script>
 
