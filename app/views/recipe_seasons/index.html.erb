@@ -40,7 +40,7 @@
   <main class="calendar">
     <header> <h2 id="main_month_title"></h2></header>
     <div class="nav">
-        <button class=" btn btn-vegetables">Vegetables</button>  <button class=" btn btn-all" id="all">All </button> <button class="  btn btn-fruits">Fruits</button>
+        <button class=" btn btn-vegetables" id="btn-vegetables-click">Vegetables</button>  <button class=" btn btn-all" id="all">All </button> <button class=" btn btn-fruits" id="btn-fruits-click">Fruits</button>
     </div>
     <article class="list-items list-legumes">
       <h3 class="nav" id="vegetables_title">Vegetables</h3>
@@ -120,7 +120,33 @@ const myevent = document.getElementById("all").addEventListener("click", functio
       main_month_title.textContent = "All the months";
 })
 
-//
+// filter by clicking on vegetables buttons
+const myevent_vegi = document.getElementById("btn-vegetables-click").addEventListener("click", function() {
+        const array_month = document.getElementsByClassName('month-api')
+        for (let k=0; k < array_month.length; k++) {
+          let tmp = "vegetable"
+          if (array_month[k].classList[2] != tmp){
+              array_month[k].classList.add("really_hidden")
+          }
+
+          }
+      main_month_title.innerHTML= ""
+      main_month_title.textContent = "Vegetables selected";
+})
+
+// filter by clicking on fruits buttons
+const myevent_fruit = document.getElementById("btn-fruits-click").addEventListener("click", function() {
+        const array_month = document.getElementsByClassName('month-api')
+        for (let k=0; k < array_month.length; k++) {
+          let tmp = "fruit"
+          if (array_month[k].classList[2] != tmp){
+              array_month[k].classList.add("really_hidden")
+          }
+
+          }
+      main_month_title.innerHTML= ""
+      main_month_title.textContent = "Vegetables selected";
+})
 
 
 </script>
