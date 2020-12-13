@@ -24,8 +24,8 @@
   </section>
 
   <nav class="month-nav" id="test">
-    <button class="month" value="Januari" type="submit"><span>Januari</span></button>
-    <button class="month" value="Februari"type="submit" ><span>Februari</span></button>
+    <button class="month" value="Januari"><span>Januari</span></button>
+    <button class="month" value="Februari"><span>Februari</span></button>
     <button class="month" value="March"><span>March</span></button>
     <button class="month" value="April"><span>April</span></button>
     <button class="month" value="May"><span>May</span></button>
@@ -80,7 +80,7 @@ fetch("https://apiseason.herokuapp.com/api/v1/products")
   .then((data) => {
     data.products.forEach((result) => {
       const haverst = `
-          <li class="${result.months_available} ${result.kind}" title="${result.name}">
+          <li class="month-api ${result.months_available} ${result.kind}" title="${result.name}">
              <p>${result.name} | ${result.kind} | ${result.months_available} </p>
           </li>`;
 
@@ -89,17 +89,21 @@ fetch("https://apiseason.herokuapp.com/api/v1/products")
     });
   });
 
-
-
+// it will hid the none selected line => month not choose in the months calendar
 let buttons = document.querySelectorAll('.month');
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].onclick = function(event) {
-    // console.log(event.target.value)
-    let a = event.target.value
-alert(a)
-  }
-}
+      let tmp = event.target.innerHTML
+        const array_month = document.getElementsByClassName('month-api')
+        for (let j=0; j < array_month.length; j++) {
+          if (array_month[j].classList[1] != tmp){array_month[j].classList.add("really_hidden")}
+          }
+      alert(tmp);
+  }}
+
+
+
 
 
 </script>
@@ -108,3 +112,4 @@ alert(a)
 
 <!-- https://www.farm.coop/calendrier-fruits-legumes-belges/ -->
 <!-- https://www.greenpeace.fr/guetteur/calendrier/ -->
+<!-- https://teamtreehouse.com/community/addeventlistener-get-value-out -->
