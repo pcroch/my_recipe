@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I just it just a recipe book to store my own recipes as I like cooking and forget all the time my recipes
 
-Things you may want to cover:
+**This is a NVP I haven't pushed in production.**
+I still need to end the layout and refactor it :/ 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
